@@ -1,0 +1,83 @@
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.circle-container{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.circle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: yellow;
+    opacity: 1;
+    transition: all 1s ease-in;
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    position: fixed;
+}
+
+.circle:hover{
+    opacity: 0;
+}
+
+.loading{
+    border: 2px solid green;
+    width: 150px;
+    height: 50px;
+}
+
+.loading span{
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    background-color: green;
+    opacity: 75%;
+    animation: fill 3s forwards;
+}
+
+.loading div{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes move {
+    0%,100%{
+        left: 0;
+        bottom: 0;
+    }
+    25%{
+        left: calc(100vw - 150px);
+        bottom: 0;
+    }
+    50%{
+        bottom: calc(100vh - 150px);
+        left: calc(100vw - 150px)
+    }
+    75%{
+        bottom: calc(100vh - 150px);
+        left: 0;
+    }
+}
+
+@keyframes fill {
+    0%{
+        width:0;
+    }
+    25%{
+        width: 60%;
+    }
+    75%{
+        width: 65%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
